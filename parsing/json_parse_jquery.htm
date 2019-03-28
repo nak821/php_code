@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Json Parse</title>
+</head>
+<body>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+	$.ajax({
+		url : "http://alivenetsolution.co/findpackers/api/activePlans",
+		contentType: 'application/json; charset=utf-8',
+		type : "GET",
+		beforeSend: function(xhr){
+			xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+			xhr.setRequestHeader('Accept', '*/*');
+		},
+		success : function(data){
+
+			console.log(data);
+		}
+	})
+</script>
+</body>
+</html>

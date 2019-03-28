@@ -1,0 +1,41 @@
+=============================================
+1. Query for find nth maximum salary.
+
+ANS:- SELECT *
+FROM table_name AS a 
+WHERE n - 1 = (
+ SELECT COUNT(primary_key_column) 
+ FROM products b 
+ WHERE  b.column_name > a. column_name)
+
+ Ex : select * from salary as a where 2 - 1 = (select count(id) from salary as b where b.salay_amt > a.salary_amt)
+
+ ==============================================
+2. Query for search value in comma seperated rows
+
+ANS:- select find_in_set('a','a,b,c,d')
+==============================================
+3. Query for copy one table structure to another in mysql 
+ANS:- INSERT INTO city_new (id, name) SELECT population, countrycode FROM city
+
+4. Query for copy data from one table to anothe table.
+
+ANS:- INSERT INTO new_table SELECT * FROM old_table
+		or
+	INSERT INTO  city_new (id, name) SELECT population, countrycode FROM city
+
+
+5. Optimize queries based on the query optimization guidelines
+
+ANS: - 1. Index all the predicates in JOIN, WHERE, ORDER BY and GROUP BY clauses.
+       2.Avoid using functions in predicates(columns).
+       3. Avoid using wildcard (%) at the beginning of a predicate.(SELECT * FROM TABLE1 WHERE COL1 LIKE '%ABC').
+       4. Avoid unnecessary columns in SELECT clause.
+       5. Use inner join, instead of outer join if possible.
+            The outer join should only be used if it is necessary. Using outer join limits the database optimization options which typically results in slower SQL execution.
+       6.DISTINCT and UNION should be used only if it is necessary.
+            DISTINCT and UNION operators cause sorting, which slows down the SQL execution. Use UNION ALL instead of UNION, if possible, as it is much more efficient.
+       
+
+       
+

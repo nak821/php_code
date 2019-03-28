@@ -1,0 +1,8 @@
+{
+    "name": "naren/html_to_pdf",
+    "description": "create html to pdf",
+    "type": "library",
+    "require": {
+        "dompdf/dompdf": "^0.8.3"
+    }
+}
