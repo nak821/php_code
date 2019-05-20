@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL);
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -7,19 +7,29 @@
  */
 
 class test{
-    public static $a = 1;
+    public static $a = 10;
     
-    public function staticFunction(){
+    public static function staticFunction(){
             
-        return $this->a;
+        return self::$a;
     }
 }
 
-$obj1 = new test();
-$obj2 = new test();
+class test2{
+    
+    public function staticFunction1(){
+            test::$a= 15;
+        return test::staticFunction();
+    }
+    
+    
+}
 
-$obj1->a = 10;
-$obj2->a = 15;
+//$obj1 = new test();
+$obj2 = new test2();
+//test::$a = 10;
+//echo test::staticFunction();
+//$obj2->a = 15;
 
-echo $obj1->staticFunction();
-echo $obj2->staticFunction();
+//echo $obj1->staticFunction();
+echo $obj2->staticFunction1();
