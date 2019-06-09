@@ -39,11 +39,11 @@ fclose($myfile);
   <h3>Write PHP Code Here</h3>
 	
 <div class="row">
-<div style="border: 1px solid green; height: 322px">
+<div style="border: 1px solid green; height: 422px">
 <div class="col-md-6" id="codediv">
 <code style="margin-left: 25px; ">&lt;?php</code>
 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-<textarea rows="4" cols="50" name="code_editor" id="code_editor">
+<textarea rows="5" cols="50" name="code_editor" id="code_editor">
 <?php 
 if(isset($_POST['submit'])){ 
 	echo $txt; 
@@ -52,10 +52,8 @@ if(isset($_POST['submit'])){
 }
 ?>
 </textarea>
-<span style="    position: absolute;
-    left: 489px;
-    top: 277px;">
-	<input type="submit" name="submit" class="btn btn-success" value="Execute">
+<span style="position: absolute;left: 450px;top: 370px;">
+    <input type="submit" name="submit" class="btn btn-success" value="Execute" style="border-radius:0">
 </span>
 </form>
 </div>
@@ -83,7 +81,9 @@ if(isset($_POST['submit'])){
         indentWithTabs: true,
         enterMode: "keep",
         tabMode: "shift"
+        
     });
+     editor.setSize(null, 400);
   </script>
 </body>
 </html>
